@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyproject-initializr"
+version = "1.0.0"
+description = "Creates a project directory with some helpful default files and directories"
+readme = "README.md"
+authors = [{ name = "ans2ur", email = "ans2urgt@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["project", "initializer"]
+requires-python = ">=3"

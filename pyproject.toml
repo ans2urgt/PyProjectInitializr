@@ -18,4 +18,4 @@ keywords = ["project", "initializer"]
 "Homepage" = "https://github.com/ans2urgt/PyProjectInitializr"
 
 [project.scripts]
-pyproject-initializr = "app:main"
+pyproject-initializr = "app.main:main"

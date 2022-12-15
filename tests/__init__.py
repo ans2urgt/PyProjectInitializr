@@ -1,4 +1,13 @@
 EXAMPLE_UNIT_TEST_CONTENT = '''
+import unittest
+
+class TestExampleCode(unittest.TestCase):
+
+	def test_example_code_method(self):
+		expected = True
+		actual = True
+		self.assertEqual(expected, actual)
+
 '''
 
 GITIGNORE_CONTENT = '''

@@ -3,6 +3,7 @@ import unittest
 from datetime import datetime
 
 import os
+import shutil
 
 from src.app.controller.commandlinecontroller import CommandLineController
 
@@ -10,10 +11,21 @@ from tests import GITIGNORE_CONTENT, EXAMPLE_UNIT_TEST_CONTENT
 
 class TestCommandLine(unittest.TestCase):
 
+	@classmethod
+	def setUpClass(cls):
+		cls._delete_list = [] 
+
+	@classmethod
+	def tearDownClass(cls):
+		# delete 
+		for item in cls._delete_list:
+			shutil.rmtree(item)
+
 	def test_program_takes_command_line_args(self):
 		#setup
 		controller = CommandLineController()
 		project_name = f"Test_{datetime.now()}"
+		self._delete_list.append(project_name)
 		#action
 		controller.run(project_name)
 		#verify
@@ -30,7 +42,7 @@ class TestCommandLine(unittest.TestCase):
 		readme_content = ""
 		file_map = {
 
-			f"{project_name}/src/__init__.py": "",
+			f"{project_name}/src/app/__init__.py": "",
 			f"{project_name}/tests/__init__.py": "",
 			f"{project_name}/tests/testexample.py": EXAMPLE_UNIT_TEST_CONTENT,
 			f"{project_name}/.gitignore": GITIGNORE_CONTENT,

@@ -3,17 +3,30 @@ import unittest
 from datetime import datetime
 
 import os
+import shutil
 
 from src.app.generators.filegenerator import FileGenerator
 
 class TestFileGenerator(unittest.TestCase):
-	"""docstring for CommandLine"""
 
+	@classmethod
+	def setUpClass(cls):
+		cls._delete_list = [] 
+
+	@classmethod
+	def tearDownClass(cls):
+		# delete 
+		for item in cls._delete_list:
+			if "Folder" in item:
+				shutil.rmtree(item)
+			else:
+				os.remove(item)
 
 	def test_file_generator_generates_files_one(self):
 		#setup
 		file_generator = FileGenerator()
 		file_name = f"Test_{datetime.now()}"
+		self._delete_list.append(file_name)
 		file_map = {file_name: ""}
 		#action
 		file_generator.create_files(file_map)
@@ -30,6 +43,7 @@ class TestFileGenerator(unittest.TestCase):
 	def test_file_generator_generates_files(self):
 		#setup
 		folder = f"Test_Folder_{datetime.now()}"
+		self._delete_list.append(folder)
 		os.makedirs(folder)
 		file_generator = FileGenerator()
 		file_name = f"Test_{datetime.now()}"

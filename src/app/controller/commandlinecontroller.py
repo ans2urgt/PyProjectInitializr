@@ -11,13 +11,13 @@ class CommandLineController():
 	def run(self, project_name):
 		# create folders
 		folders = [
-			project_name, f"{project_name}/src", f"{project_name}/tests"
+			project_name, f"{project_name}/src/app", f"{project_name}/tests"
 		]
 		self.folder_generator.create_folders(folders)
 		# create files
 		file_map = {
 
-			f"{project_name}/src/__init__.py": "",
+			f"{project_name}/src/app/__init__.py": "",
 			f"{project_name}/tests/__init__.py": "",
 			f"{project_name}/tests/testexample.py": EXAMPLE_UNIT_TEST_CONTENT,
 			f"{project_name}/.gitignore": GITIGNORE_CONTENT,

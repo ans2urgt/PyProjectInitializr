@@ -4,7 +4,7 @@ from datetime import datetime
 
 import os
 
-from src.generators.foldergenerator import FolderGenerator
+from src.app.generators.foldergenerator import FolderGenerator
 
 class TestFolderGenerator(unittest.TestCase):
 	"""docstring for CommandLine"""

@@ -4,7 +4,7 @@ from datetime import datetime
 
 import os
 
-from src.generators.filegenerator import FileGenerator
+from src.app.generators.filegenerator import FileGenerator
 
 class TestFileGenerator(unittest.TestCase):
 	"""docstring for CommandLine"""

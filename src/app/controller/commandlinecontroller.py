@@ -1,6 +1,6 @@
-from src.generators.filegenerator import FileGenerator
-from src.generators.foldergenerator import FolderGenerator 
-from src.controller import GITIGNORE_CONTENT, EXAMPLE_UNIT_TEST_CONTENT
+from app.generators.filegenerator import FileGenerator
+from app.generators.foldergenerator import FolderGenerator 
+from app.controller import GITIGNORE_CONTENT, EXAMPLE_UNIT_TEST_CONTENT
 
 class CommandLineController():
 

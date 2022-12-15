@@ -4,7 +4,7 @@ from datetime import datetime
 
 import os
 
-from src.controller.commandlinecontroller import CommandLineController
+from src.app.controller.commandlinecontroller import CommandLineController
 
 from tests import GITIGNORE_CONTENT, EXAMPLE_UNIT_TEST_CONTENT
 

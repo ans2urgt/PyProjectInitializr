@@ -6,7 +6,7 @@ import shutil
 import traceback
 
 def main():
-	parser = argparse.ArgumentParser(description="Creates a project direcctory with some default files and directories")
+	parser = argparse.ArgumentParser(description="Creates a project directory with some default files and directories")
 	parser.add_argument("--createproject", help="Creates a project directory in current dir with given project name")
 	args = parser.parse_args()
 	if args.createproject:

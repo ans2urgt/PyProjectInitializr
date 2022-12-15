@@ -1,7 +1,6 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
-
 [project]
 name = "pyproject-initializr"
 version = "1.0.0"
@@ -10,9 +9,10 @@ readme = "README.md"
 authors = [{ name = "ans2ur", email = "ans2urgt@gmail.com" }]
 license = { file = "LICENSE" }
 classifiers = [
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python",
     "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
 ]
 keywords = ["project", "initializer"]
-requires-python = ">=3"
+[project.urls]
+"Homepage" = "https://github.com/ans2urgt/PyProjectInitializr"

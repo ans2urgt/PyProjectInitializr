@@ -10,5 +10,5 @@ pip install pyproject-initializr
 
 ## Usage:
 ```
-python -m pyproject-initializr --createproject "project name"
+pyproject-initializr --createproject "project name"
 ```

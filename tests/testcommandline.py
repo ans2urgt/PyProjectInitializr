@@ -54,6 +54,8 @@ class TestCommandLine(unittest.TestCase):
 				actual_file_content = file_reader.read()
 				self.assertTrue(actual_file_content == file_map[file])
 
+		self.assertTrue(f"{project_name}{project_name}" in os.listdir(project_name))
+
 		
 if __name__ == '__main__':
 	unittest.main()

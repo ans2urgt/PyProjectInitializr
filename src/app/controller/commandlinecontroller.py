@@ -1,5 +1,6 @@
+from app.generators.envgenerator import EnvGenerator
 from app.generators.filegenerator import FileGenerator
-from app.generators.foldergenerator import FolderGenerator 
+from app.generators.foldergenerator import FolderGenerator
 from app.controller import GITIGNORE_CONTENT, EXAMPLE_UNIT_TEST_CONTENT
 
 class CommandLineController():
@@ -7,6 +8,7 @@ class CommandLineController():
 	def __init__(self):
 		self.file_generator = FileGenerator()
 		self.folder_generator = FolderGenerator()
+		self.env_generator = EnvGenerator()
 
 	def run(self, project_name):
 		# create folders
@@ -25,3 +27,5 @@ class CommandLineController():
 
 		}
 		self.file_generator.create_files(file_map)
+		#generate virtual environment
+		self.env_generator.create(project_name)

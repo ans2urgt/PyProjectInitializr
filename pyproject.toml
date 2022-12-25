@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "pyproject-initializr"
-version = "0.0.2"
+version = "0.0.1"
 description = "Creates a project directory with some helpful default files and directories"
 readme = "README.md"
 authors = [{ name = "ans2ur", email = "ans2urgt@gmail.com" }]

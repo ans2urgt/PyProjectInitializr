@@ -3,6 +3,8 @@ from app.generators.filegenerator import FileGenerator
 from app.generators.foldergenerator import FolderGenerator
 from app.controller import GITIGNORE_CONTENT, EXAMPLE_UNIT_TEST_CONTENT
 
+from concurrent.futures import ThreadPoolExecutor
+
 class CommandLineController():
 
 	def __init__(self):
@@ -26,6 +28,12 @@ class CommandLineController():
 			f"{project_name}/README.md": "",
 
 		}
-		self.file_generator.create_files(file_map)
+
+		with ThreadPoolExecutor(max_workers = 2) as executor:
+			executor.submit(self.file_generator.create_files, file_map)
+			executor.submit(self.env_generator.create, f"{project_name}")
+
+
+		# self.file_generator.create_files(file_map)
 		#generate virtual environment
-		self.env_generator.create(f"{project_name}")
+		# self.env_generator.create(f"{project_name}")

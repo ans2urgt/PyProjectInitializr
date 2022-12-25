@@ -4,7 +4,7 @@ from datetime import datetime
 
 import os
 import shutil
-from src.app.generators.foldergenerator import FolderGenerator
+from app.generators.foldergenerator import FolderGenerator
 
 class TestFolderGenerator(unittest.TestCase):
 

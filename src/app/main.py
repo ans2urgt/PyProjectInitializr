@@ -8,7 +8,7 @@ import traceback
 def main():
 	# print("hello world")
 	parser = argparse.ArgumentParser(description="Creates a project directory with some default files and directories")
-	parser.add_argument("--createproject", help="Creates a project directory in current dir with given project name")
+	parser.add_argument("--create", help="Creates a project directory in current dir with given project name")
 	args = parser.parse_args()
 	if args.createproject:
 		project_name = args.createproject

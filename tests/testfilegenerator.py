@@ -5,7 +5,7 @@ from datetime import datetime
 import os
 import shutil
 
-from src.app.generators.filegenerator import FileGenerator
+from app.generators.filegenerator import FileGenerator
 
 class TestFileGenerator(unittest.TestCase):
 

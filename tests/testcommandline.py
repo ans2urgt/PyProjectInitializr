@@ -5,7 +5,7 @@ from datetime import datetime
 import os
 import shutil
 
-from src.app.controller.commandlinecontroller import CommandLineController
+from app.controller.commandlinecontroller import CommandLineController
 
 from tests import GITIGNORE_CONTENT, EXAMPLE_UNIT_TEST_CONTENT
 
@@ -24,7 +24,7 @@ class TestCommandLine(unittest.TestCase):
 	def test_program_takes_command_line_args(self):
 		#setup
 		controller = CommandLineController()
-		project_name = f"Test_{datetime.now()}"
+		project_name = f"Test_project_{datetime.now()}"
 		self._delete_list.append(project_name)
 		#action
 		controller.run(project_name)
@@ -54,7 +54,7 @@ class TestCommandLine(unittest.TestCase):
 				actual_file_content = file_reader.read()
 				self.assertTrue(actual_file_content == file_map[file])
 
-		self.assertTrue(f"{project_name}{project_name}" in os.listdir(project_name))
+		self.assertTrue("env" in os.listdir(project_name))
 
 		
 if __name__ == '__main__':

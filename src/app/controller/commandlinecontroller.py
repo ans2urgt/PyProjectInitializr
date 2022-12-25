@@ -28,4 +28,4 @@ class CommandLineController():
 		}
 		self.file_generator.create_files(file_map)
 		#generate virtual environment
-		self.env_generator.create(project_name)
+		self.env_generator.create(f"{project_name}")

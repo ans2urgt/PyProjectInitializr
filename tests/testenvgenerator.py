@@ -5,7 +5,7 @@ import shutil
 
 from datetime import datetime
 
-from src.app.generators.envgenerator import EnvGenerator
+from app.generators.envgenerator import EnvGenerator
 
 class TestEnvGenerator(unittest.TestCase):
 
@@ -20,10 +20,11 @@ class TestEnvGenerator(unittest.TestCase):
 			shutil.rmtree(item)
 
 	def test_generate_virtual_env(self):
-		env_name = f"env_{datetime.now()}"
-		self._delete_list.append(env_name)
+		project_name = f"test_project_{datetime.now()}"
+		env_name = f"env"
+		self._delete_list.append(project_name)
 		env_generator = EnvGenerator()
-		env_generator.create(env_name)
-		folders = os.listdir()
+		env_generator.create(project_name)
+		folders = os.listdir(project_name)
 		self.assertTrue(env_name in folders)
 		
